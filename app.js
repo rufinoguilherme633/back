@@ -18,7 +18,7 @@ app.use((request, response, next) => {
 app.get('/contatos/usuario/:uf', cors(), async function(request, response, next) {
     let contato = request.params.uf
 
-    if (contato == '' || contato == undefined || !isNaN(contato)) {
+    if (contato == '' || contato == undefined) {
         response.status(404)
         response.json({ message: "Não é possivel processar a requisição, pois o contato do Estado não foi informada" });
     } else {
@@ -32,7 +32,7 @@ app.get('/contatos/usuario/:uf', cors(), async function(request, response, next)
             response.json();
         }
     }
-    console.log(dono)
+    console.log(contato)
 })
 
 app.listen(8080, function() {

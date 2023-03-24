@@ -534,19 +534,23 @@ const contatos = {
 }
 const filtroAcount = function(contato) {
     const dono = []
+    resultado = []
 
     for (let i = 0; i < contatos["whats-users"].length; i++) {
         const obj = contatos["whats-users"][i];
 
 
         if (obj.account == contato) {
-            dono.push(obj)
-                //console.log(dono);
-                //return dono;
+            //  dono.push(obj)
+            //console.log(dono);
+            //return dono;
 
             for (let j = 0; j < obj.contacts.length; j++) {
-                const contact = obj.contacts[j];
+                const contact = obj.contacts;
                 // console.log(contact)
+                resultado.push(contact)
+
+
                 return contact
             }
         }
@@ -559,7 +563,7 @@ const filtroAcount = function(contato) {
 
 }
 
-//filtroAcount("Jonathan Xavier")
+console.log(filtroAcount("Ricardo da Silva"))
 
 // const filtroContatosAcost = function() {
 
